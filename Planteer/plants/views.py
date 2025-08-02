@@ -68,7 +68,7 @@ def delete_plant(request, plant_id):
 def add_review(request: HttpRequest, plant_id):
     if request.method == "POST":
         plant = get_object_or_404(Plant, pk=plant_id)
-        Review.objects.create(
+        Review.objects.create( #create will automatically save to my db 
             plant=plant,
             name=request.POST["name"],
             rating=request.POST["rating"],
